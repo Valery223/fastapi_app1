@@ -32,3 +32,8 @@ DB_PASSWORD=passwd
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=database
+
+alembic 
+alembic revision --autogenerate -m "Create tables" 
+alembic upgrade head 
+alembic downgrade -1
