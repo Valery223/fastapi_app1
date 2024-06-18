@@ -1,5 +1,5 @@
 from model.creature import Creature
-from service import creature as code
+from api_v1.creature import crud as code
 
 sample = Creature(name="yeti",
     country="CN",

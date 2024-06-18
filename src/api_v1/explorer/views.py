@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from schemas.explorer import Explorer
+from api_v1.explorer.schemas import Explorer
 import fake.explorer as service
 
 router = APIRouter(prefix="/explorer")

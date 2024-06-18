@@ -12,6 +12,8 @@ class Settings(BaseSettings):
 
     db_echo:bool = False
 
+    api_v1_prefix:str = "/api/v1"
+
     def get_url(self):
         return f'postgresql+asyncpg://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}'
 

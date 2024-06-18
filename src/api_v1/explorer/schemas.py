@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 class ExplorerBase(BaseModel):
     name: str
@@ -6,10 +6,9 @@ class ExplorerBase(BaseModel):
     description: str
 
 # for create data
-class ExplorerCreate(BaseModel):
+class ExplorerCreate(ExplorerBase):
     pass
 
 # for return data
 class Explorer(ExplorerBase):
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)

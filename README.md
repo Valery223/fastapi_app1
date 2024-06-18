@@ -1,3 +1,7 @@
+problems:
+export PYTHONPATH=path_to_project:$PATHONPATH
+
+
 --> poetry
 export PYTHONPATH=$PWD/src:$PATHONPATH
 
@@ -20,3 +24,11 @@ or in .py
 'Hello? World?'
 
 http localhost:8000/hi      
+
+
+env:
+DB_USER=user
+DB_PASSWORD=passwd
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=database
