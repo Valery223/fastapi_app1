@@ -18,7 +18,7 @@ async def get_one(creature: Creature =  Depends(creature_by_name) ):
     return creature
 
 
-@router.post("/")
+@router.post("/", response_model=Creature, status_code=status.HTTP_201_CREATED)
 async def create(creature_in:CreatureCreate, db: AsyncSession = Depends(db_helper.get_db)):
     return await crud.create(db,creature_in)
 
@@ -49,7 +49,7 @@ async def update_partial(
         partial=True
     )
 
-@router.delete("/{name}")
+@router.delete("/{name}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete(
     creature: Creature = Depends(creature_by_name),
     session: AsyncSession = Depends(db_helper.get_db)
